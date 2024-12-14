@@ -1400,6 +1400,257 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Features Section ke dua
+--------------------------------------------------------------*/
+.features-2 .nav-tabs {
+  border: 0;
+  background-color: color-mix(in srgb, var(--default-color), transparent 96%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  padding: 6px;
+  width: auto;
+}
+
+.features-2 .nav-item {
+  margin: 0;
+  padding: 0 5px 0 0;
+}
+
+.features-2 .nav-item:last-child {
+  padding-right: 0;
+}
+
+.features-2 .nav-link {
+  background-color: none;
+  color: var(--heading-color);
+  padding: 10px 30px;
+  transition: 0.3s;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 100%;
+  border: 0;
+  margin: 0;
+}
+
+@media (max-width: 468px) {
+  .features .nav-link {
+    padding: 8px 20px;
+  }
+}
+
+.features-2 .nav-link i {
+  padding-right: 15px;
+  font-size: 48px;
+}
+
+.features-2 .nav-link h4 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.features-2 .nav-link:hover {
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.features-2 .nav-link:hover h4 {
+  color: var(--accent-color);
+}
+
+.features-2 .nav-link.active {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.features-2 .nav-link.active h4 {
+  color: var(--contrast-color);
+}
+
+.features-2 .tab-content {
+  margin-top: 30px;
+}
+
+.features-2 .tab-pane h3 {
+  color: var(--heading-color);
+  font-weight: 700;
+  font-size: 32px;
+  position: relative;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.features-2 .tab-pane h3:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent-color);
+  left: 0;
+  bottom: 0;
+}
+
+.features-2 .tab-pane ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features-2 .tab-pane ul li {
+  padding-top: 10px;
+}
+
+.features-2 .tab-pane ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: var(--accent-color);
+}
+
+.features-2 .tab-pane p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Features Cards Section
+--------------------------------------------------------------*/
+.features-cards-2 {
+  --default-color: #555;
+  --heading-color: #333;
+}
+
+.features-cards-2 .feature-box {
+  height: 100%;
+  padding: 40px 30px;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.features-cards-2 .feature-box i {
+  font-size: 44px;
+  display: inline-block;
+  line-height: 0;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.features-cards-2 .feature-box h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 20px 0 10px 0;
+  text-align: center;
+}
+
+.features-cards-2 .feature-box p {
+  font-size: 15px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.features-cards-2 .feature-box.orange {
+  background-color: #fff3e2;
+}
+
+.features-cards-2 .feature-box.orange i {
+  color: #edb86e;
+}
+
+.features-cards-2 .feature-box.blue {
+  background-color: #deedfd;
+}
+
+.features-cards-2 .feature-box.blue i {
+  color: #20a5f8;
+}
+
+.features-cards-2 .feature-box.green {
+  background-color: #d5f1e4;
+}
+
+.features-cards-2 .feature-box.green i {
+  color: #48c88a;
+}
+
+.features-cards-2 .feature-box.red {
+  background-color: #fdeded;
+}
+
+.features-cards-2 .feature-box.red i {
+  color: #f28484;
+}
+
+.features-cards-2 .feature-box.cyan {
+  background-color: rgb(179, 231, 231);
+}
+
+.features-cards-2 .feature-box.red i {
+  color: #f28484;
+}
+
+
+/*--------------------------------------------------------------
+# Features 2 Section
+--------------------------------------------------------------*/
+.features-3 .feature-item .feature-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 92%);
+}
+
+.features-3 .feature-item .feature-icon i {
+  font-size: 24px;
+  color: var(--accent-color);
+}
+
+.features-3 .feature-item .feature-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.features-3 .feature-item .feature-content p {
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.features-3 .phone-mockup {
+  position: relative;
+  padding: 30px 0;
+}
+
+.features-3 .phone-mockup img {
+  max-width: 300px;
+  height: auto;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+}
+
+@media (max-width: 991.98px) {
+  .features-2 .feature-item {
+    text-align: center !important;
+    margin-bottom: 2rem;
+  }
+
+  .features-2 .feature-item .d-flex {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center !important;
+  }
+
+  .features-2 .phone-mockup {
+    margin: 3rem 0;
+  }
+}
+
+/*--------------------------------------------------------------
 # Call To Action Section
 --------------------------------------------------------------*/
 .call-to-action .container {
