@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Building Information Model Jembatan Baru UGM</title>
+  <link rel="icon" type="image/x-icon" href="assets/Bridge.ico" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+
+  <!-- Include the CesiumJS JavaScript and CSS files -->
+
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.112/Build/Cesium/Cesium.js"></script>
+
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.112/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cesiumjs.org/Cesium/Build/Apps/Sandcastle/templates/bucket.css">
+  <script src = "https://sandcastle.cesium.com/Sandcastle-header.js"></script>
+  
+
+  <style type="text/css">
+    #toggle-fpv { z-index: 1; position: fixed; top: 5px; left: 5px; }
+  </style>
+
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Index - iLanding Bootstrap Template</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<!-- Favicons -->
+<link href="assets/img/favicon.png" rel="icon">
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<!-- Vendor CSS Files -->
+<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="assets/vendor/aos/aos.css" rel="stylesheet">
+<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+<!-- Main CSS File -->
+<link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">iLanding</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Beranda</a></li>
+          <li><a href="index.html#about">Tentang</a></li>
+          <li><a href="#features#features">Data</a></li>
+          <li><a href="#services">Data</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="Cesium.html">Jelajahi Model BIM</a>
+
+    </div>
+  </header>
+
+
+  <div id="cesiumContainer"></div>
+  <button id="toggle-fpv" style="margin-top: 110px;">W untuk Maju <br> S untuk Mundur <br> A untuk Kiri <br>D untuk Kanan <br>Q untuk Atas/Naik <br>E untuk Bawah/Turun <br></button>
+  <script type="module">
+
+     // Replace number below with buildingID of your uploaded model on cesium ion at: https://ion.cesium.com/assets
+     const buildingID=  2882500;
+     const buildingID2= 2389000;
+    // Your access token can be found at: https://ion.cesium.com/tokens.
+    // Replace `your_access_token` with your Cesium ion access token.
+
+    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYzQ1Njc3Yy1kM2Q2LTQ1MjItYWUxNy1mOTJhZmI1YjdlMTkiLCJpZCI6MTgzNDAwLCJpYXQiOjE3MDIwODEzMTB9.HX0yAAecV9qEzMxDQEa3mVj8NJi6VZInKYqeH9M8xxY';
+
+    // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
+    const viewer = new Cesium.Viewer('cesiumContainer', {
+      terrain: Cesium.Terrain.fromWorldTerrain(),
+    });    
+
+    // Add the 3D Tileset you created from your Cesium ion account.
+    const newBuildingTileset = await Cesium.Cesium3DTileset.fromIonAssetId(buildingID);
+    viewer.scene.primitives.add(newBuildingTileset);
+
+    // Add the 3D Tileset you created from your Cesium ion account.
+    const newBuildingTileset2 = await Cesium.Cesium3DTileset.fromIonAssetId(buildingID2);
+    viewer.scene.primitives.add(newBuildingTileset2);
+
+    // Fly the camera to Denver, Colorado at the given longitude, latitude, and height.
+    viewer.camera.flyTo({
+    destination: Cesium.Cartesian3.fromDegrees(110.370836, -7.763631, 250),
+    orientation: {
+        heading: Cesium.Math.toRadians(0), // Angle of rotation around the vertical axis (eastward)
+        pitch: Cesium.Math.toRadians(-30), // Angle from the horizon (downward)
+        roll: 0 // Rotation around the camera's direction axis
+    },
+    duration: 3 // Optional: Fly to the destination in 3 seconds
+    });
+
+    // First Person View Camera--------------------------------------------------------------------------
+    const scene = viewer.scene;
+    const canvas = viewer.canvas;
+    canvas.setAttribute("tabindex", "0"); // needed to put focus on the canvas
+    canvas.onclick = function () {
+      canvas.focus();
+    };
+    const ellipsoid = scene.globe.ellipsoid;    
+
+    // disable the default event handlers
+    scene.screenSpaceCameraController.enableRotate = false;
+    scene.screenSpaceCameraController.enableTranslate = false;
+    scene.screenSpaceCameraController.enableZoom = false;
+    scene.screenSpaceCameraController.enableTilt = false;
+    scene.screenSpaceCameraController.enableLook = false;
+
+    let startMousePosition;
+    let mousePosition;
+    const flags = {
+      looking: false,
+      moveForward: false,
+      moveBackward: false,
+      moveUp: false,
+      moveDown: false,
+      moveLeft: false,
+      moveRight: false,
+    };
+
+    const handler = new Cesium.ScreenSpaceEventHandler(canvas);
+
+    handler.setInputAction(function (movement) {
+      flags.looking = true;
+      mousePosition = startMousePosition = Cesium.Cartesian3.clone(
+        movement.position
+      );
+    }, Cesium.ScreenSpaceEventType.LEFT_DOWN);
+
+    handler.setInputAction(function (movement) {
+      mousePosition = movement.endPosition;
+    }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
+
+    handler.setInputAction(function (position) {
+      flags.looking = false;
+    }, Cesium.ScreenSpaceEventType.LEFT_UP);
+
+    function getFlagForKeyCode(keyCode) {
+      switch (keyCode) {
+        case "W".charCodeAt(0):
+          return "moveForward";
+        case "S".charCodeAt(0):
+          return "moveBackward";
+        case "Q".charCodeAt(0):
+          return "moveUp";
+        case "E".charCodeAt(0):
+          return "moveDown";
+        case "D".charCodeAt(0):
+          return "moveRight";
+        case "A".charCodeAt(0):
+          return "moveLeft";
+        default:
+          return undefined;
+      }
+    }
+
+    document.addEventListener(
+      "keydown",
+      function (e) {
+        const flagName = getFlagForKeyCode(e.keyCode);
+        if (typeof flagName !== "undefined") {
+          flags[flagName] = true;
+        }
+      },
+      false
+    );
+
+    document.addEventListener(
+      "keyup",
+      function (e) {
+        const flagName = getFlagForKeyCode(e.keyCode);
+        if (typeof flagName !== "undefined") {
+          flags[flagName] = false;
+        }
+      },
+      false
+    );
+
+    viewer.clock.onTick.addEventListener(function (clock) {
+      const camera = viewer.camera;
+
+      if (flags.looking) {
+        const width = canvas.clientWidth;
+        const height = canvas.clientHeight;
+
+        // Coordinate (0.0, 0.0) will be where the mouse was clicked.
+        const x = (mousePosition.x - startMousePosition.x) / width;
+        const y = -(mousePosition.y - startMousePosition.y) / height;
+
+        const lookFactor = 0.05;
+        camera.lookRight(x * lookFactor);
+        camera.lookUp(y * lookFactor);
+      }
+
+      // Change movement speed based on the distance of the camera to the surface of the ellipsoid.
+      const cameraHeight = ellipsoid.cartesianToCartographic(
+        camera.position
+      ).height;
+      const moveRate = cameraHeight / 100.0;
+
+      if (flags.moveForward) {
+        camera.moveForward(moveRate);
+      }
+      if (flags.moveBackward) {
+        camera.moveBackward(moveRate);
+      }
+      if (flags.moveUp) {
+        camera.moveUp(moveRate);
+      }
+      if (flags.moveDown) {
+        camera.moveDown(moveRate);
+      }
+      if (flags.moveLeft) {
+        camera.moveLeft(moveRate);
+      }
+      if (flags.moveRight) {
+        camera.moveRight(moveRate);
+      }
+    });
+
+      
+      </script>
+
+    </div>
+
+</body>
+
+</html>
